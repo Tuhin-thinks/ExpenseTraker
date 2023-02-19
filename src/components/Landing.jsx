@@ -8,7 +8,7 @@ const LandingPage = () => {
       // Here use .container-fluid instead of .container because .container has one fixed width for each screen size in bootstrap (xs,sm,md,lg,xl,xxl); .container-fluid expands to fill the available width.
       className='d-flex container-fluid'
       style={{
-        minHeight: '100vh',
+        minHeight: '90vh',
         justifyContent: 'center',
       }}
     >
