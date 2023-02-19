@@ -1,10 +1,13 @@
 import { Formik } from "formik";
+import { useRef } from "react";
 import { Button, Form } from "react-bootstrap";
 import * as Yup from "yup";
 
 // To display the form to add a new expense or to edit an existing expense, we need to create a new component called ExpenseForm. This component will be a child of the ExpenseTracker component. We will pass the addExpense function as a prop to the ExpenseForm component. The addExpense function will be called when the user clicks the Add Expense button. The addExpense function will add the new expense to the expenses array. The expenses array will be passed as a prop to the ExpenseList component. The ExpenseList component will display the expenses in a table.
 
 const ExpenseForm = ({ addExpense }) => {
+  const itemRef = useRef(null);
+
   return (
     <Formik
       enableReinitialize
@@ -17,6 +20,8 @@ const ExpenseForm = ({ addExpense }) => {
         addExpense(values);
         // reset the form
         actions.resetForm();
+        // set the focus to the item field
+        itemRef.current.focus();
       }}
     >
       {({
@@ -39,6 +44,7 @@ const ExpenseForm = ({ addExpense }) => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   name="item"
+                  ref={itemRef}
                 />
 
                 {errors.item && touched.item && (
