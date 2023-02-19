@@ -5,7 +5,7 @@ const LandingPage = () => {
   console.log("Here we go again!");
   return (
     <div
-      className="d-flex container-fluid"
+      className="d-flex container"
       style={{
         minHeight: "100vh",
         justifyContent: "center",
@@ -16,23 +16,18 @@ const LandingPage = () => {
           alignItems: "center",
         }}
       >
-        <Col
-          style={{
-            minWidth: "50vh",
-          }}
-        >
+        <Col className="justify-content-center col-md-6 col-sm-10">
           <Card className="border-0">
             <Card.Body>
-              <Image src="https://www.i1.creditdonkey.com/image/1/debts-and-expenses-graph-v2.png"></Image>
+              <Image
+                src="https://www.i1.creditdonkey.com/image/1/debts-and-expenses-graph-v2.png"
+                className="img-fluid"
+              ></Image>
             </Card.Body>
           </Card>
         </Col>
 
-        <Col
-          style={{
-            minWidth: "50vh",
-          }}
-        >
+        <Col className="justify-content-center col-md-6 col-sm-6">
           <Card>
             <Card.Body>
               {/* create button to take user to expense tracker page */}
