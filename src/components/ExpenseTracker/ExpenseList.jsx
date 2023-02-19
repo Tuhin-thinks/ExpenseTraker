@@ -5,14 +5,14 @@ const ExpenseList = ({ expenses }) => {
   return expenses.length ? (
     <Row style={{ justifyContent: "center" }}>
       <Col className="col-md-10">
-        <Card className="table-responsive">
+        <Card className="table-responsive mt-5">
           <Table
-            bordered
             hover
+            striped
             style={{ marginTop: "1rem", borderRadius: "15px" }}
-            responsive
+            className="table-responsive-xs table-borderless"
           >
-            <thead>
+            <thead className="thead-dark">
               <tr>
                 <th>Item</th>
                 <th>Cost</th>
